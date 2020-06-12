@@ -1,0 +1,6 @@
+<%= form_for :anything, url: add_city_path do |form| %>
+    <div class="add-btn">
+        <%= form.text_field :city, class: 'add-city-textfield', placeholder: "Add a city here..." %>
+        <%= form.submit "Add", class: "btn btn-primary btn-lg" %>
+    </div>
+<% end %>

@@ -10,13 +10,15 @@
         </div>
         <div class="clock-container">
             <div class="scroll"></div>
+            <div>
+                <%= render 'showcase/add_btn' %>
+            </div>
             <div class="divider"></div>
             <%if @time_format_twenty_four %>
                 <%= render 'showcase/twentyfour_format' %>
             <%else%>
                 <%= render 'showcase/twelve_format' %>
             <%end%>
-            <div class="add-btn"></div>
         </div>
         <div class="options-container">
             <div class="color">
