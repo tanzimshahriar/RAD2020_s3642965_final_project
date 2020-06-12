@@ -33,7 +33,7 @@ class ShowcaseController < ApplicationController
       redirect_to root_path
     else
       if cityExists(params[:anything][:city])
-        if !already_added(params[:anything][:city])
+        if already_added(params[:anything][:city])
           flash[:danger] = "Error! The city has been added before"
         else
           session[:selected_cities].push(params[:anything][:city]);
