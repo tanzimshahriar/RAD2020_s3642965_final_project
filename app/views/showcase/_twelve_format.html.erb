@@ -35,7 +35,8 @@
 <% @selectedCities.each do |city| %>
     <div class="city-container">
         <div class="city-name">
-            <%=city%>
+            <div><%=city%></div>
+            <div class="difference"><%= get_difference(city) %></div>
         </div>
         <div class="city-time-container">
             <div class="time">

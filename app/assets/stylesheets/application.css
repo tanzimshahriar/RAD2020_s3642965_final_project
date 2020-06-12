@@ -14,15 +14,17 @@
  *= require_self
  */
 
-.black-theme {
+.black {
     color: white;
-    background-color: black;
+    background-color: rgb(39, 39, 39);
 }
-.graphite-theme {
-    color: white;
-}
-.white-theme {
+.graphite {
     color: black;
+    background-color: rgb(209, 209, 209);
+}
+.white {
+    color: black;
+    background-color: white;
 }
 
 /* footer */
