@@ -22,9 +22,9 @@
             <div class="color">
                 <h5>Color theme</h5>
                 <div class="theme-button-container">
-                    <div class="btn btn-default btn-xs">Black</div>
-                    <div class="btn btn-default btn-xs">Graphite</div>
-                    <div class="btn btn-default btn-xs">White</div>
+                    <%= button_to "Black", {:controller => "showcase", :action => "change_theme" } , :params => {:theme => "black"}, :method=>:post %>
+                    <%= button_to 'Graphite', {:controller => "showcase", :action => "change_theme" } , :params => {:theme => "graphite"}, :method=>:post %>
+                    <%= button_to 'White', {:controller => "showcase", :action => "change_theme" } , :params => {:theme => "white"}, :method=>:post %>
                 </div>
                 <div>
                     <%= form_for :anything, url: toggle_time_format_path do |form| %>
