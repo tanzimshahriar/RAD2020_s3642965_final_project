@@ -13,8 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 html, body {
     height: 100%;
@@ -35,13 +33,40 @@ html, body {
 /* footer */
 
 footer {
-    position: fixed;
+    color: black!important;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
+    color: rgb(226, 226, 226);
+    background-color: white;
+    text-align: center;
+    border: solid;
+    border-color: grey;
+}
+
+.footer-row {
     padding-top: 5px;
     padding-bottom: 5px;
-    color: white;
-    background-color: black;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.student-info {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+}
+
+.links {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.link {
+    padding: 10px;
 }
