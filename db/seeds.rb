@@ -5,5 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# Timezone.create(value: "UTC+10", abbr: Time.current.strftime("%Z"))
-# Timezone.create(value: "UTC-11", abbr: "U", offset: -11, isdst: false, text: "(UTC-11:00) Coordinated Universal Time-11", utc: ["Etc/GMT+11", "Pacific/Midway", "Pacific/Niue", "Pacific/Pago_Pago"])
+Timezone.create(value: "AUS Eastern Standard Time", abbr: "AEST", offset: 10, isdst: false, text: "(UTC+10:00) Canberra, Melbourne, Sydney", utc: ["Australia/Melbourne", "Australia/Sydney"])
+
+data = ActiveSupport::JSON.decode(File.read("db/zone.json"))
+Timezone.create(data)

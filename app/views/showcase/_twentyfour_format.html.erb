@@ -1,0 +1,73 @@
+<div class="cities-container">
+    <div class="city-container">
+        <div class="city-name">
+            Melbourne
+        </div>
+        <div class="city-time-container">
+            <div class="time"><%=Time.current.strftime("%H:%M") %></div>
+            <% if (Time.current.hour.to_i >= 9) && (Time.current.hour.to_i <= 17) %>
+                <div class="day">Today
+                <span class="glyphicon glyphicon-stop text-success" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.hour.to_i >= 18) && (Time.current.hour.to_i <= 19) %>
+                <div class="day">Today
+                <span class="glyphicon glyphicon-stop text-warning" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.hour.to_i == 8) %>
+                <div class="day">Today
+                <span class="glyphicon glyphicon-stop text-danger" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.hour.to_i >= 20) && (Time.current.hour.to_i <= 22)%>
+                <div class="day">Today
+                <span class="glyphicon glyphicon-stop text-danger" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.hour >= 23) %>
+                <div class="day">Today
+                <span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.hour <= 7) %>
+                <div class="day">Today
+                <span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span></div>
+            <% end %>
+        </div>
+    </div>
+<div class="divider"></div>
+
+<% @selectedCities.each do |city| %>
+    <div class="city-container">
+        <div class="city-name">
+            <%=city%>
+        </div>
+        <div class="city-time-container">
+            <div class="time"><%=Time.current.in_time_zone(get_timezone(city)).strftime("%H:%M") %></div>
+            <% if (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i >= 9) && (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i <= 17) %>
+                <div class="day"><%=get_day(city)%>
+                <span class="glyphicon glyphicon-stop text-success" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i >= 18) && (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i <= 19) %>
+                <div class="day"><%=get_day(city)%>
+                <span class="glyphicon glyphicon-stop text-warning" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i == 8) %>
+                <div class="day"><%=get_day(city)%>
+                <span class="glyphicon glyphicon-stop text-danger" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i >= 20) && (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i <= 22) %>
+                <div class="day"><%=get_day(city)%>
+                <span class="glyphicon glyphicon-stop text-danger" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i >= 23) %>
+                <div class="day"><%=get_day(city)%>
+                <span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span></div>
+            <% end %>
+            <% if (Time.current.in_time_zone(get_timezone(city)).strftime("%H").to_i <= 7)%>
+                <div class="day"><%=get_day(city)%>
+                <span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span></div>
+            <% end %>
+        </div>
+        <div class="add-btn"></div>
+    </div>
+    <div class="divider"></div>
+<%end%>
+</div>
+            
