@@ -94,12 +94,9 @@ https://protected-sands-60265.herokuapp.com/
        Running: rake assets:precompile
        Yarn executable was not detected in the system.
        Download Yarn at https://yarnpkg.com/en/docs/install
-       I, [2020-06-12T21:26:24.351946 #286]  INFO -- : Writing /tmp/build_173654d61df06d1a71ba04966d4a74ca/public/assets/application-1bf6715123ce84b5bd45e9a12bf4d6cba9f4989fe6b4bf91da9932663ea3ca7b.css
-       I, [2020-06-12T21:26:24.352939 #286]  INFO -- : Writing /tmp/build_173654d61df06d1a71ba04966d4a74ca/public/assets/application-1bf6715123ce84b5bd45e9a12bf4d6cba9f4989fe6b4bf91da9932663ea3ca7b.css.gz
-       Asset precompilation completed (7.95s)
+       Asset precompilation completed (1.62s)
        Cleaning assets
        Running: rake assets:clean
-       I, [2020-06-12T21:26:26.599610 #297]  INFO -- : Removed application-9090b171ed6499df89d0cf8fb2df701463a894871d470c113cebe3b9d2bb84aa.css
 -----> Detecting rails configuration
 ###### WARNING:
        You set your `config.active_storage.service` to :local in production.
@@ -142,7 +139,7 @@ https://protected-sands-60265.herokuapp.com/
 -----> Compressing...
        Done: 37.5M
 -----> Launching...
-       Released v9
+       Released v10
        https://protected-sands-60265.herokuapp.com/ deployed to Heroku
 
 ## Github
