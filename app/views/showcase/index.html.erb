@@ -1,0 +1,70 @@
+<div class="main-container">
+    <h2>Clock+</h2>
+    <div class="subtitle">Clock+ built by Tanzim Shahriar - s3642965@student.rmit.edu.au - DI - Group 4 Alex</div>
+    <div class="clock-row">
+        <div class="time-type-container">
+            <div><span class="glyphicon glyphicon-stop text-success" aria-hidden="true"></span>Business time</div>
+            <div><span class="glyphicon glyphicon-stop text-warning" aria-hidden="true"></span>Business overtime</div>
+            <div><span class="glyphicon glyphicon-stop text-danger" aria-hidden="true"></span>Personal time</div>
+            <div><span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span>Sleeping time</div>
+        </div>
+        <div class="clock-container">
+            <div class="scroll"></div>
+            <div class="divider"></div>
+            <div class="cities-container">
+                <div class="city-container">
+                    <div class="city-name">
+                        <%=Time.zone.name%>
+                    </div>
+                    <div class="city-time-container">
+                        <div class="time"><%=Time.current.strftime("%H:%M") %></div>
+                        <% if (Time.current.strftime("%H").to_i >= 9) && (Time.current.strftime("%H").to_i <= 17) %>
+                            <div class="day">Today <span class="glyphicon glyphicon-stop text-success" aria-hidden="true"></span></div>
+                        <% elsif (Time.current.strftime("%H").to_i >= 18) && (Time.current.strftime("%H").to_i <= 19) %>
+                            <div class="day">Today <span class="glyphicon glyphicon-stop text-warning" aria-hidden="true"></span></div>
+                        <% elsif (Time.current.strftime("%H").to_i == 8) || ((Time.current.strftime("%H").to_i >= 20) && (Time.current.strftime("%H").to_i <= 22)) %>
+                            <div class="day">Today <span class="glyphicon glyphicon-stop text-error" aria-hidden="true"></span></div>
+                        <% elsif (Time.current.strftime("%H").to_i >= 23) || (Time.current.strftime("%H").to_i <= 7) %>
+                            <div class="day">Today <span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span></div>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+                <% @selectedTimeZones.each do |timezone| %>
+                    
+                    <div class="city-container">
+                        <div class="city-name">
+                            <%=timezone%>
+                        </div>
+                        <div class="city-time-container">
+                            <div class="time"><%=Time.current.in_time_zone(timezone).strftime("%H:%M") %></div>
+                            <% if (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 9) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 17) %>
+                                <div class="day">Today <span class="glyphicon glyphicon-stop text-success" aria-hidden="true"></span></div>
+                            <% elsif (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 18) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 19) %>
+                                <div class="day">Today <span class="glyphicon glyphicon-stop text-warning" aria-hidden="true"></span></div>
+                            <% elsif (Time.current.in_time_zone(timezone).strftime("%H").to_i == 8) || ((Time.current.in_time_zone(timezone).strftime("%H").to_i >= 20) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 22)) %>
+                                <div class="day">Today <span class="glyphicon glyphicon-stop text-error" aria-hidden="true"></span></div>
+                            <% elsif (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 23) || (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 7) %>
+                                <div class="day">Today <span class="glyphicon glyphicon-plane text-default" aria-hidden="true"></span></div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                <%end%>
+            </div>
+            <div class="add-btn"></div>
+        </div>
+        <div class="options-container">
+            <div class="color">
+                <h5>Color theme</h5>
+                <div class="theme-button-container">
+                    <div class="btn btn-default btn-xs">Black</div>
+                    <div class="btn btn-default btn-xs">Graphite</div>
+                    <div class="btn btn-default btn-xs">White</div>
+                </div>
+                <div>24 hour clock</div>
+            </div>
+        </div>
+    </div>
+</div>
